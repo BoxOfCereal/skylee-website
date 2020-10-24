@@ -92,3 +92,10 @@ h1 {
 .insta-row {
   width: 100%;
 }
+
+.insta-text {
+  font-size: 2rem;
+}
+.insta-text-em {
+  font-size: 3rem;
+}
