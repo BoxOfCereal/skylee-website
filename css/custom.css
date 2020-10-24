@@ -1,0 +1,90 @@
+/*
+* Template Name: The Tattooist
+* Template Description: Tattoo Studio Template
+* Template URI: http://demo.webisir.com/the-tattooist
+* Version: 1.2.6
+* Author: Webisir
+* Author URI: http://themeforest.net/user/webisir
+*/
+
+/*--------------------------------------------------------------
+    Custom CSS
+----------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Arvo";
+  src: url("../fonts/Arvo/Arvo-Regular.ttf") format("truetype"),
+    url("../fonts/Arvo/Arvo-Bold.ttf") format("truetype"),
+    url("../fonts/Arvo/Arvo-Italic.ttf") format("truetype"),
+    url("../fonts/Arvo/Arvo-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Creepster";
+  src: url("../fonts/Creepster/Creepster-Regular.ttf") format("truetype");
+}
+
+p,
+h2,
+h3,
+h4,
+h5,
+a {
+  font-family: "Arvo";
+}
+
+h1 {
+  font-size: 5rem;
+  padding-top: 150px;
+  font-family: "Creepster", Arial, sans-serif;
+}
+
+@media only screen and (max-width: 512px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  .instagram-bar:not(.feed-bg):after {
+    bottom: -20px;
+    left: 30%;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  #insta-text {
+    text-align: center;
+  }
+}
+
+.creepster {
+  font-family: "Creepster", Arial, sans-serif;
+}
+
+.arvo {
+  font-family: "Arvo";
+}
+
+.insta-icon {
+  font-family: "FontAwesome";
+  content: "\f16d";
+}
+
+.col-centered {
+  margin: 0 auto;
+}
+
+.row-centered {
+  margin: 0 auto;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.insta-text {
+  height: 100%;
+}
+
+.display {
+  display: block;
+}
