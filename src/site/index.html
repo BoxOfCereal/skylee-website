@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.html
+title: "Home - Art By Skylee"
 ---
 
 <!-- ============ Featured - START ============ -->
@@ -261,28 +262,23 @@ layout: layouts/base.html
 
 <!-- ============ Services - END ============ -->
 
-<!-- ============ Instagram Banner - START ============ -->
+<!-- ============ Content Loader ============ -->
+<div class="content-loader">
+  <div class="loader"></div>
+</div>
+<!-- ============ Content Loader - END ============ -->
 
-<a
-  class=""
-  href="https://www.instagram.com/art_by_skylee"
-  target="_blank"
->
-  <div class="row .center-block insta-row">
-    <div class="col-md-2 col-md-offset-3 text-center">
-      <img
-        src="img/svg/instagram-brands.svg"
-        alt=""
-        srcset=""
-        width="150"
-        height="150"
-      />
-    </div>
-    <div class="col-md-6 text-left" id="insta-text">
-      <span class="arvo insta-text">See all works on </span
-      ><span class="creepster insta-text-em">Instagram</span>
-    </div>
-  </div>
-</a>
+<!-- MODAL START -->
 
-<!-- ============ Instagram Banner - END ============ -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+  
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="modal-img" />
+  
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+  <!-- MODAL END -->
