@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <!--  -->
+    <link rel="shortcut icon" href="icon/favicon.ico" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="icon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="196x196"
+      href="icon/favicon-192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="160x160"
+      href="icon/favicon-160.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="icon/favicon-96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="icon/favicon-64.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icon/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icon/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" href="icon/favicon-57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="icon/favicon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="icon/favicon-72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="icon/favicon-144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="icon/favicon-60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="icon/favicon-120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="icon/favicon-76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="icon/favicon-152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/favicon-180.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="icon/favicon-144.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <!--  -->
+    <meta charset="utf-8" />
+    <title>The Tattooist - Tattoo Studio Template</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+
+  <body class="one-page">
+    <div class="wrapper">
+      <header
+        style="height: 50%"
+        id="master-header"
+        class="full-screen overlayed"
+      >
+        <div class="bg-overlay"></div>
+        <div id="media-container"></div>
+
+        <div class="top-header">
+          <div class="container">
+            <!-- ============ Main Navigation - START ============ -->
+
+            <a id="nav-toggle" href="#"><span></span></a>
+            <nav id="nav-menu">
+              <ul>
+                <li><a title="Home" href="/">Home</a></li>
+                <li><a title="Shop" href="/shop.html">Shop</a></li>
+                <li><a title="About Me" href="/about-me.html">About Me </a></li>
+                <li>
+                  <a title="Contact Me" href="/contact-me.html">Contact Me </a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- ============ Main Navigation - END ============ -->
+          </div>
+        </div>
+
+        <div id="brand">
+          <h1>Art By Skylee</h1>
+          <div class="info"></div>
+        </div>
+      </header>
+
+      <!-- ============ Main Header - END ============ -->
+
+      <!-- ============ Main  ============ -->
+      <div id="main">
+
+        {{content | safe}}
+      </div>
+      <!-- ============ Main  END ============ -->
+
+      <div class="content-loader">
+        <div class="loader"></div>
+      </div>
+
+      <!-- MODAL START -->
+
+      <footer class="dark">
+        <div class="copyright">
+          &copy; 2020 - <strong>Skylee Perkins</strong>
+        </div>
+      </footer>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="modal-img" />
+
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
+    </div>
+    <!-- MODAL END -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+      $("#media-container").backstretch("img/bg.jpg");
+    </script>
+
+    <!-- Google Map Scripts -->
+    <script src="js/map.js"></script>
+  </body>
+</html>

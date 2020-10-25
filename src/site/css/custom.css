@@ -1,0 +1,232 @@
+/*
+* Template Name: The Tattooist
+* Template Description: Tattoo Studio Template
+* Template URI: http://demo.webisir.com/the-tattooist
+* Version: 1.2.6
+* Author: Webisir
+* Author URI: http://themeforest.net/user/webisir
+*/
+
+/*--------------------------------------------------------------
+    Custom CSS
+----------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Arvo";
+  src: url("../fonts/Arvo/Arvo-Regular.ttf") format("truetype"),
+    url("../fonts/Arvo/Arvo-Bold.ttf") format("truetype"),
+    url("../fonts/Arvo/Arvo-Italic.ttf") format("truetype"),
+    url("../fonts/Arvo/Arvo-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Creepster";
+  src: url("../fonts/Creepster/Creepster-Regular.ttf") format("truetype");
+}
+
+p,
+h2,
+h3,
+h4,
+h5,
+a {
+  font-family: "Arvo";
+}
+
+h1 {
+  font-size: 5rem;
+  padding-top: 150px;
+  font-family: "Creepster", Arial, sans-serif;
+}
+
+@media only screen and (max-width: 512px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+  .instagram-bar:not(.feed-bg):after {
+    bottom: -20px;
+    left: 30%;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  #insta-text {
+    text-align: center;
+  }
+}
+
+.creepster {
+  font-family: "Creepster", Arial, sans-serif;
+}
+
+.arvo {
+  font-family: "Arvo";
+}
+
+.insta-icon {
+  font-family: "FontAwesome";
+  content: "\f16d";
+}
+
+.col-centered {
+  margin: 0 auto;
+}
+
+.row-centered {
+  margin: 0 auto;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.insta-text {
+  height: 100%;
+}
+
+.display {
+  display: block;
+}
+
+.insta-row {
+  width: 100%;
+}
+
+.insta-text {
+  font-size: 2rem;
+}
+.insta-text-em {
+  font-size: 3rem;
+}
+
+/* ======================= gallery =======================*/
+.row-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.col-gallery {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.col-gallery img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .col-gallery {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-gallery {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+/* ======================= gallery END =======================*/
+
+/* ======================= MODAL =======================*/
+
+/* Style the Image Used to Trigger the Modal */
+.gallery-img {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery-img:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2000; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  /*overflow: auto;*/ /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  /* width: 80%; */
+  max-width: 700px;
+
+  object-fit: scale-down;
+  width: 60%;
+  height: 70vh;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 40px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* ======================= MODAL =======================*/
