@@ -1,7 +1,6 @@
 ---
 title: 'Hello Wurld'
 date: '2020-10-25'
-layout: layouts/post.html
 tags: post
 category: 'art'
 ---
@@ -10,3 +9,9 @@ category: 'art'
 Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
 
 piss piss piss piss piss piss piss piss piss piss piss piss piss piss piss piss piss piss piss piss 
+
+{%- for bar in foo -%}
+    <p>{{bar.test}}</p>
+{%- endfor-%}
+
+{{swapi.name}}

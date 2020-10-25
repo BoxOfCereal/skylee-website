@@ -1,0 +1,6 @@
+[
+  { "test": "value from global json file" },
+  { "test": "value2 from global json file" },
+  { "test": "value3 from global json file" },
+  { "test": "value4 from global json file" }
+]
