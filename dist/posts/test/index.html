@@ -61,6 +61,9 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/custom.css" />
+
+    <!-- netlify identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 
   <body class="one-page">
@@ -182,5 +185,19 @@ $("#media-container").backstretch("img/bg.jpg");
 
 <!-- Google Map Scripts -->
 <script src="/js/map.js"></script>
+
+<!-- Netlify identity redirect script -->
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
