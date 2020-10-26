@@ -21,6 +21,10 @@ module.exports = function (config) {
     return collection.getFilteredByGlob('src/site/posts/*.md')
   })
 
+  // config.addCollection('artWorks',collection=>{
+  //   return collection.getFilteredByGlob('src/site/posts/*.md')
+  // })
+
   return {
     
     dir: {
