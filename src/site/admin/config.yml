@@ -24,4 +24,6 @@ collections:
           - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
           - {label: Title, name: page_title, widget: string}
 
-media_folder: "img"
+# These lines should *not* be indented
+media_folder: "src/img" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/img" # The src attribute for uploaded media will begin with /images/uploads

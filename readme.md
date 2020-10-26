@@ -1,0 +1,1 @@
+you NEED to have "@11ty/eleventy": "^0.8.2", in your package and run eleventy on netlify
