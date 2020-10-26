@@ -29,7 +29,7 @@ module.exports = function (config) {
       includes: "templates",
       data:"_data"
     },
-    templateFormats: ["html", "md", "css", "liquid", "njk"],
+    templateFormats: ["html", "md", "css", "liquid", "njk","yml"],
     htmlTemplateEngine: "liquid",
     markdownTemplateEngine: "liquid",
   };
