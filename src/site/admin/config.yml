@@ -5,7 +5,7 @@ backend:
 collections:
   - name : "posts" # routes in cms
     label: "Blog Posts" # label in UI 
-    folder: "/src/posts" # place this lives in in 11ty or SSG
+    folder: "/src/site/posts" # place this lives in in 11ty or SSG
     create: true
     slug:  "{{year}}-{{month}}-{{day}}-{{slug}}" # final output url on client
     fields: # The fields for each document, usually in front matter
