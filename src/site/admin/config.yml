@@ -19,7 +19,7 @@ collections:
     files:
       - label: "Homepage"
         name: "homepage"
-        file: "src/site/index.html"
+        file: "src/site/index.jstl"
         fields:
           - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
           - {label: Title, name: page_title, widget: string}

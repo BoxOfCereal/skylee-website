@@ -33,7 +33,7 @@ module.exports = function (config) {
       includes: "templates",
       data:"_data"
     },
-    templateFormats: ["html", "md", "css", "liquid", "njk","yml"],
+    templateFormats: ["html", "md", "css", "liquid", "njk","yml","jstl"],
     htmlTemplateEngine: "liquid",
     markdownTemplateEngine: "liquid",
   };
