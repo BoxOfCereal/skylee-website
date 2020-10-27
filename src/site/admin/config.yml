@@ -27,7 +27,7 @@ collections:
             name: "featuredWorks"
             widget: "list"
             summary: '{{fields.title}}'
-            label_singular: "Add Image"
+            label_singular: "Add"
             fields: 
               - {label: Image, name: image, widget: image}
               - {label: Title, name: title, widget: string}
