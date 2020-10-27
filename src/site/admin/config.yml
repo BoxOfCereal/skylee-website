@@ -19,7 +19,7 @@ collections:
     files:
       - label: "Homepage"
         name: "homepage"
-        file: "src/site/index.jstl"
+        file: "src/site/index.html"
         fields:
           - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
           - {label: Title, name: page_title, widget: string}
@@ -30,6 +30,14 @@ collections:
             label_singular: "Work"
             fields: 
               - {label: Image, name: image, widget: image}
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: text}
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            summary: '{{fields.title}}'
+            label_singular: "service"
+            fields: 
               - {label: Title, name: title, widget: string}
               - {label: Description, name: description, widget: text}
 
