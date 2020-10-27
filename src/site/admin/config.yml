@@ -23,6 +23,14 @@ collections:
         fields:
           - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
           - {label: Title, name: page_title, widget: string}
+          - label: "Gallery"
+            name: "galleryImages"
+            widget: "list"
+            summary: '{{fields.image}}'
+            fields: 
+              - {label: Image, name: image, widget: image}
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: text}
 
 # These lines should *not* be indented
 media_folder: "src/site/img" # Media files will be stored in the repo under static/images/uploads
