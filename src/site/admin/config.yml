@@ -23,10 +23,11 @@ collections:
         fields:
           - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
           - {label: Title, name: page_title, widget: string}
-          - label: "Gallery"
-            name: "galleryImages"
+          - label: "Featured Works"
+            name: "featuredWorks"
             widget: "list"
-            summary: '{{fields.image}}'
+            summary: '{{fields.title}}'
+            label_singular: "Add Image"
             fields: 
               - {label: Image, name: image, widget: image}
               - {label: Title, name: title, widget: string}
