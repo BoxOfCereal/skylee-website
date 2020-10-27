@@ -71,16 +71,11 @@ featuredWorks:
   <div class="content container">
     <!-- GALLERY START -->
     <!-- https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp -->
-
-
-
     <div class="row-gallery">
-
       {% assign numColumns = 4 %}
       {% assign len = featuredWorks.size | minus: 1%}
       {% for i in (0..3) %}
         <div class="col-gallery">
-
           {% for j in (0..len) %}
             {% assign modFour = j modulo: 4 %}
             {% if modFour == "0" and i == 0 %}
@@ -92,183 +87,37 @@ featuredWorks:
               </div>
             {% endif %}
             {% if modFour == "1" and i == 1 %}
-              {{featuredWorks[j].title}}
-              <b>{{modFour}}</b>
+              <div class="gallery-img-container">
+                <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
+                <h3 class="gallery-img-title">{{featuredWorks[j].title}}</h3>
+                <p class="gallery-img-desc">{{featuredWorks[j].description}}
+                </p>
+              </div>
             {% endif %}
             {% if modFour == "2" and i == 2 %}
-              {{featuredWorks[j].title}}
-              <b>{{modFour}}</b>
+              <div class="gallery-img-container">
+                <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
+                <h3 class="gallery-img-title">{{featuredWorks[j].title}}</h3>
+                <p class="gallery-img-desc">{{featuredWorks[j].description}}
+                </p>
+              </div>
             {% endif %}
             {% if modFour == "3" and i == 3 %}
-              {{featuredWorks[j].title}}
-              <b>{{modFour}}</b>
+              <div class="gallery-img-container">
+                <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
+                <h3 class="gallery-img-title">{{featuredWorks[j].title}}</h3>
+                <p class="gallery-img-desc">{{featuredWorks[j].description}}
+                </p>
+              </div>
             {% endif %}
           {% endfor %}
         </div>
       {% endfor %}
-
-      <!-- col -->
-      <div class="col-gallery">
-        
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/IMG_8729.jpeg" />
-          <h3 class="gallery-img-title">img title 1</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-      </div>
-      <!-- col end -->
-
-      <!-- col -->
-      <div class="col-gallery">
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/IMG_8742.jpeg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/IMG_8753.jpeg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-2.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-2.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-      </div>
-      <!-- col end -->
-      <!-- col -->
-      <div class="col-gallery">
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-1.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-2.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-2.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-2.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-      </div>
-
-      <div class="col-gallery">
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-1.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-2.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-2.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-
-        <div class="gallery-img-container">
-          <img class="gallery-img" src="/img/work-image-2.jpg" />
-          <h3 class="gallery-img-title">img title</h3>
-          <p class="gallery-img-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            maiores ipsa hic vero, quae minus reprehenderit laboriosam
-            nemo iusto velit deserunt, debitis quas. Autem magni
-            consectetur suscipit, voluptas veritatis reiciendis?
-          </p>
-        </div>
-      </div>
-
-
     </div>
 
     <!-- GALLERY END -->
   </div>
+
 </div>
 
 <!-- ============ Featured - END ============ -->
