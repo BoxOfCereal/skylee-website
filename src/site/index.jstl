@@ -65,7 +65,7 @@ featuredWorks:
 
 <div id="featured" class="section">
   <div class="section-title">
-    <h2>{{page_title}}</h2>
+    <h2>${page_title}</h2>
   </div>
 
   <div class="content container">
@@ -75,9 +75,6 @@ featuredWorks:
 
 
     <div class="row-gallery">
-      <!-- {%- for bar in galleryImages -%}
-        <p>{{bar.test}}</p>
-      {%- endfor-%} -->
      
       <!-- col -->
       <div class="col-gallery">
