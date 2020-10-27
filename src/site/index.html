@@ -65,7 +65,7 @@ featuredWorks:
 
 <div id="featured" class="section">
   <div class="section-title">
-    <h2>${page_title}</h2>
+    <h2>{{page_title}}</h2>
   </div>
 
   <div class="content container">
@@ -75,7 +75,38 @@ featuredWorks:
 
 
     <div class="row-gallery">
-     
+
+      {% assign numColumns = 4 %}
+      {% assign len = featuredWorks.size | minus: 1%}
+      {% for i in (0..3) %}
+        <div class="col-gallery">
+
+          {% for j in (0..len) %}
+            {% assign modFour = j modulo: 4 %}
+            {% if modFour == "0" and i == 0 %}
+              <div class="gallery-img-container">
+                <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
+                <h3 class="gallery-img-title">{{featuredWorks[j].title}}</h3>
+                <p class="gallery-img-desc">{{featuredWorks[j].description}}
+                </p>
+              </div>
+            {% endif %}
+            {% if modFour == "1" and i == 1 %}
+              {{featuredWorks[j].title}}
+              <b>{{modFour}}</b>
+            {% endif %}
+            {% if modFour == "2" and i == 2 %}
+              {{featuredWorks[j].title}}
+              <b>{{modFour}}</b>
+            {% endif %}
+            {% if modFour == "3" and i == 3 %}
+              {{featuredWorks[j].title}}
+              <b>{{modFour}}</b>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+
       <!-- col -->
       <div class="col-gallery">
         
