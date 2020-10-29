@@ -53,6 +53,21 @@ collections:
           - label: "Bio"
             name: "bio"
             widget: "text"
+      - label: "Contact"
+        name: "contact"
+        file: "src/site/contact-me.html"
+        fields:
+          - {label: Title, name: page_title, widget: string}
+          - {label: Header, name: header, widget: string}
+          - {label: Contact Message, name: contactMessage, widget: text}
+          - label: "Subjects"
+            name: "subjects"
+            widget: "list"
+            summary: '{{fields.subject}}'
+            label_singular: "subject"
+            fields: 
+              - {label: Subject, name: subject, widget: string}
+
             
 
 # These lines should *not* be indented
