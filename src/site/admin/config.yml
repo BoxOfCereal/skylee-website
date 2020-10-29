@@ -40,6 +40,18 @@ collections:
             fields: 
               - {label: Title, name: title, widget: string}
               - {label: Description, name: description, widget: text}
+      - label: "About Me"
+        name: "aboutMe"
+        file: "src/site/about-me.html"
+        fields:
+          - {label: Title, name: page_title, widget: string}
+          - label: "Photo"
+            name: "photo"
+            widget: "image"
+          - label: "Bio"
+            name: "bio"
+            widget: "text"
+            
 
 # These lines should *not* be indented
 media_folder: "src/site/img" # Media files will be stored in the repo under static/images/uploads
