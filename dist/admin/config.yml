@@ -45,6 +45,8 @@ collections:
         file: "src/site/about-me.html"
         fields:
           - {label: Title, name: page_title, widget: string}
+          - {label: Header, name: header, widget: string}
+          - {label: Reach Out To Me Message, name: message, widget: string}
           - label: "Photo"
             name: "photo"
             widget: "image"
