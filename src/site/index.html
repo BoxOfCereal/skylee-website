@@ -60,12 +60,25 @@ featuredWorks:
       arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
       Maecenas quis pulvinar ipsum.
 services:
-  - title: "1"
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque a sapien scelerisque, accumsan arcu eu, congue nisl. Duis
-      iaculis sapien urna, sit amet ultricies tellus pulvinar sed. Mauris quis
-      arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
-      Maecenas quis pulvinar ipsum.
+  - title: "Service A"
+    description: "I will draw a small portrait (yes I do pet portraits as well!)
+      or a design of your choice rendered in pencil, fully shaded.
+      OR any design of your choice. Dimensions range from 5x7 to
+      8x10. Background elements = extra charge."
+  - title: "Service B"
+    description: "I will create a small colored pencil portrait (yes I do pet
+    portraits as well)! OR any design of your choice. Dimensions
+    range from 5x7 to 8x10. Background elements = extra charge."
+  - title: "Service C"
+    description: "I will create a small watercolor portrait (yes I do pet
+    portraits as well!) OR any design of your choice. Dimensions
+    range from 5x7 to 8x10. Background elements = extra charge."
+  - title: "Service D"
+    description: "I will do small to large scale paintings periodically. Message
+    me or email @SkyleeLPerkins@gmail.com to inquire about price,
+    duration, and subject matter."
+    
+     
 ---
 
 <!-- ============ Featured - START ============ -->
@@ -84,7 +97,7 @@ services:
       {% for i in (0..3) %}
         <div class="col-gallery">
           {% for j in (0..len) %}
-            {% assign modFour = j modulo: 4 %}
+            {% assign modFour = j | modulo: 4 %}
             {% if modFour == "0" and i == 0 %}
               <div class="gallery-img-container">
                 <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
@@ -137,46 +150,33 @@ services:
   </div>
 
   <div class="content container">
-    <!-- row 1 -->
-    <div class="row">
-      <div class="col-md-4">
-        <h3>Service A</h3>
-        <p>
-          I will draw a small portrait (yes I do pet portraits as well!)
-          or a design of your choice rendered in pencil, fully shaded.
-          OR any design of your choice. Dimensions range from 5x7 to
-          8x10. Background elements = extra charge.
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h3>Service B</h3>
-        <p>
-          I will create a small colored pencil portrait (yes I do pet
-          portraits as well)! OR any design of your choice. Dimensions
-          range from 5x7 to 8x10. Background elements = extra charge.
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h3>Service C</h3>
-        <p>
-          I will create a small watercolor portrait (yes I do pet
-          portraits as well!) OR any design of your choice. Dimensions
-          range from 5x7 to 8x10. Background elements = extra charge.
-        </p>
-      </div>
-    </div>
 
-    <!-- row-->
-    <div class="row">
-      <div class="col-md-4">
-        <h3>Service D</h3>
-        <p>
-          I will do small to large scale paintings periodically. Message
-          me or email @SkyleeLPerkins@gmail.com to inquire about price,
-          duration, and subject matter.
-        </p>
-      </div>
-    </div>
+    {% assign servicesColumns = 3.0 %}
+    {% assign len = services.size | minus: 1%}
+    {% assign serviceSizeFloat = services.size | times: 1.0 %}
+    {% assign numRows = serviceSizeFloat | divided_by: servicesColumns | ceil %}
+    {% assign index = 0 %}
+
+    {% for i in (1..numRows) %}
+        <div class="row">
+          {% for j in (index..len) %}
+            {% assign modThree = j | plus: 1| modulo: 3 %}
+            <div class="col-md-4">
+              <h3>{{services[j].title}}</h3>
+              <p>
+                {{services[j].description}}
+              </p>
+            </div>
+
+            {% if modThree == "0" %}
+                {% assign index = index | plus: j |plus: 1 %}
+                {{index}}
+                {% break %}
+            {% endif %}
+
+          {% endfor %}
+        </div>
+      {% endfor %}
   </div>
 </div>
 
