@@ -112,42 +112,44 @@
 
 <div class="section">
   <div class="content container">
-    <h2 class="focus-title"></h2>
+    <h2 class="focus-title">Leave me a message!</h2>
 
     <p>
-      
+      Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
     </p>
 
     <!-- ============ Contact Form - START ============ -->
 
     <form
-      class="contact-form row"
-      action="mailer/contact.php"
-      method="post"
     >
       <div class="col-md-6">
         <label
           ><strong>Full Name *</strong>
-          <input class="required" type="text" name="name" />
+          <input class="required" type="text" name="name" id="name" />
         </label>
         <label
           ><strong>Email *</strong>
-          <input class="required" type="text" name="email" />
+          <input class="required" type="text" name="email" id="email" />
         </label>
         <label
           ><strong>Subject</strong>
-          <select name="subject">
-            <option value="Subject 1">Subject 1</option>
-            <option value="Subject 2">Subject 2</option>
-            <option value="Subject 3">Subject 3</option>
-            <option value="Subject 4">Subject 4</option>
+          <select name="subject" id="subject">
+          
+        <div class="row">
+            
+              <option value="Commission">Commission</option>
+            
+              <option value="Collaboration">Collaboration</option>
+            
+              <option value="Other">Other</option>
+            
           </select>
         </label>
       </div>
       <div class="col-md-6">
         <label
           ><strong>Message *</strong>
-          <textarea class="required" name="message"></textarea>
+          <textarea class="required" name="message" id="body"></textarea>
         </label>
         <p>( <strong>*</strong> ) = Mandatory field</p>
         <input
@@ -155,6 +157,7 @@
           type="submit"
           name="submit"
           value="Send Message"
+          id="submitBtn"
         />
       </div>
       <input type="hidden" name="form_type" value="contact" />
@@ -163,6 +166,31 @@
     <!-- ============ Contact Form - END ============ -->
   </div>
 </div>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script>
+  const sendButton = document.getElementById("submitBtn");
+  const email = document.getElementById("email").value;
+  const name = document.getElementById("name").value;
+  const subject = document.getElementById("subject").value;
+  const body = document.getElementById("body").value;
+
+
+  sendButton.onclick(e=>{
+    e.preventDefault();
+  })
+  Email.send({
+    SecureToken : "eec23de3-3c24-4852-928f-a614875c0188",
+    To : email,
+    From : "nolestock@gmail.com",
+    Subject : `${name} ${subject} ${body.slice(0,10)}`,
+    Body : body
+}).then(
+  message => alert(message)
+);
+</script>
 
 
 
