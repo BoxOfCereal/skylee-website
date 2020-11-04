@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 
-display_url: https://your-site.com
+display_url: https://artbyskylee.com
 
 collections:
   - name : "posts" # routes in cms
