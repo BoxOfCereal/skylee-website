@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 
+display_url: https://your-site.com
+
 collections:
   - name : "posts" # routes in cms
     label: "Blog Posts" # label in UI 
