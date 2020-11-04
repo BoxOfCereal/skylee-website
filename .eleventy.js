@@ -3,9 +3,7 @@ module.exports = function (config) {
   config.addPassthroughCopy("src/site/img");
   config.addPassthroughCopy("src/site/fonts");
   config.addPassthroughCopy("src/site/icon");
-  config.addPassthroughCopy("src/site/instagram");
   config.addPassthroughCopy("src/site/js");
-  config.addPassthroughCopy("src/site/mailer");
 
   config.addFilter("previewContent", function(value) {
     //get content
@@ -20,10 +18,6 @@ module.exports = function (config) {
   config.addCollection('posts',collection=>{
     return collection.getFilteredByGlob('src/site/posts/*.md')
   })
-
-  // config.addCollection('artWorks',collection=>{
-  //   return collection.getFilteredByGlob('src/site/posts/*.md')
-  // })
 
   return {
     
