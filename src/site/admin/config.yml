@@ -48,7 +48,8 @@ collections:
               - {label: Subject, name: subject, widget: string}
       - label: "Homepage"
         name: "homepage"
-        file: "src/site/index.html"
+        file: "src/site/_data/gallery"
+        format: json
         fields:
           - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
           - {label: Title, name: page_title, widget: string}
