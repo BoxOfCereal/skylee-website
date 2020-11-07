@@ -1,3 +1,10 @@
 {
-  "image": "/site/img/IMG_8729.jpeg"
+  "image": "/site/img/IMG_8729.jpeg",
+  "works": [
+    {
+      "image": "/site/img/IMG_8729.jpeg",
+      "title": "test",
+      "description": "test"
+    }
+  ]
 }
