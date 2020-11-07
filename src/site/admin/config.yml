@@ -15,11 +15,16 @@ collections:
       - file: "src/site/_data/gallery.json"
         label: "Gallery"
         name: "gallery"
-        widget: "list"
+        widget: list
         fields:
-          - {label: Image, name: image, widget: image}
-          - {label: Title, name: title, widget: string, required: false}
-          - {label: Description, name: description, widget: text, required: false}
+        - label: Works
+          name: works
+          widget: list
+          fields:
+            - {label: Image, name: image, widget: image}
+            - {label: Title, name: title, widget: string, required: false}
+            - {label: Description, name: description, widget: text, required: false}
+          
 
 
 # These lines should *not* be indented
