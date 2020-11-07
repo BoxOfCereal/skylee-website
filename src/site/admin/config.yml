@@ -5,11 +5,11 @@ backend:
 display_url: https://artbyskylee.com
 
 collections:
-  - name : "gallery"
-    label : "Gallery"
-    format : "json"
-    extension : "json"
-    file: "src/site/_data/gallery"
+  - name: "gallery"
+    label: "Gallery"
+    format: "json"
+    extension: "json"
+    file: "src/site/_data/gallery.json"
       fields:
         - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
         - {label: Title, name: page_title, widget: string}
