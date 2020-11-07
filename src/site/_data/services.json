@@ -1,0 +1,20 @@
+{
+  "services": [
+    {
+      "title": "Service A",
+      "description": "I will draw a small portrait (yes I do pet portraits as well!)\nor a design of your choice rendered in pencil, fully shaded.\nOR any design of your choice. Dimensions range from 5x7 to\n8x10. Background elements = extra charge."
+    },
+    {
+      "title": "Service B",
+      "description": "I will create a small colored pencil portrait (yes I do pet\nportraits as well)! OR any design of your choice. Dimensions\nrange from 5x7 to 8x10. Background elements = extra charge."
+    },
+    {
+      "title": "Service C",
+      "description": "I will create a small watercolor portrait (yes I do pet\nportraits as well!) OR any design of your choice. Dimensions\nrange from 5x7 to 8x10. Background elements = extra charge."
+    },
+    {
+      "title": "Service D",
+      "description": "I will do small to large scale paintings periodically. Message\nme or email @SkyleeLPerkins@gmail.com to inquire about price,\nduration, and subject matter."
+    }
+  ]
+}
