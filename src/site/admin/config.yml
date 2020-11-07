@@ -5,6 +5,24 @@ backend:
 display_url: https://artbyskylee.com
 
 collections:
+  - name : "gallery"
+    label : "Gallery"
+    format : "json"
+    extension : "json"
+    file: "src/site/_data/gallery"
+      fields:
+        - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
+        - {label: Title, name: page_title, widget: string}
+        - label: "Featured Works"
+          name: "featuredWorks"
+          widget: "list"
+          summary: '{{fields.title}}'
+          label_singular: "Work"
+          fields: 
+            - {label: Image, name: image, widget: image}
+            - {label: Title, name: title, widget: string, required: false}
+            - {label: Description, name: description, widget: text, required: false}
+    files :
   - name : "posts" # routes in cms
     label: "Blog Posts" # label in UI 
     folder: "/src/site/posts" # place this lives in in 11ty or SSG
@@ -46,31 +64,6 @@ collections:
             label_singular: "subject"
             fields: 
               - {label: Subject, name: subject, widget: string}
-      - label: "Homepage"
-        name: "homepage"
-        file: "src/site/_data/gallery"
-        format: json
-        fields:
-          - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
-          - {label: Title, name: page_title, widget: string}
-          - label: "Featured Works"
-            name: "featuredWorks"
-            widget: "list"
-            summary: '{{fields.title}}'
-            label_singular: "Work"
-            fields: 
-              - {label: Image, name: image, widget: image}
-              - {label: Title, name: title, widget: string, required: false}
-              - {label: Description, name: description, widget: text, required: false}
-          - label: "Services"
-            name: "services"
-            widget: "list"
-            summary: '{{fields.title}}'
-            label_singular: "service"
-            fields: 
-              - {label: Title, name: title, widget: string}
-              - {label: Description, name: description, widget: text}
-
             
 
 # These lines should *not* be indented
