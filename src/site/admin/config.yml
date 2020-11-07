@@ -5,23 +5,23 @@ backend:
 display_url: https://artbyskylee.com
 
 collections:
-  - name: "gallery"
-    label: "Gallery"
+  - label: "Gallery"
+    name: "gallery"
     format: "json"
     extension: "json"
     file: "src/site/_data/gallery.json"
-      fields:
-        - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
-        - {label: Title, name: page_title, widget: string}
-        - label: "Featured Works"
-          name: "featuredWorks"
-          widget: "list"
-          summary: '{{fields.title}}'
-          label_singular: "Work"
-          fields: 
-            - {label: Image, name: image, widget: image}
-            - {label: Title, name: title, widget: string, required: false}
-            - {label: Description, name: description, widget: text, required: false}
+    create: true
+    fields:
+      - label: "Featured Works"
+        name: "featuredWorks"
+        widget: "list"
+        summary: '{{fields.title}}'
+        label_singular: "Work"
+        fields: 
+          - {label: Image, name: image, widget: image}
+          - {label: Title, name: title, widget: string, required: false}
+          - {label: Description, name: description, widget: text, required: false}
+
 
 # These lines should *not* be indented
 media_folder: "src/site/img" # Media files will be stored in the repo under static/images/uploads
