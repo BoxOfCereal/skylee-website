@@ -28,7 +28,7 @@ collections:
         name: "services"
         fields:
         - label: Service
-          name: sercice
+          name: services
           widget: list
           fields: 
               - {label: Title, name: title, widget: string}
