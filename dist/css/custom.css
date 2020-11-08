@@ -100,42 +100,7 @@ h1 {
   font-size: 3rem;
 }
 
-/* ======================= gallery =======================*/
-.row-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
 
-/* Create four equal columns that sits next to each other */
-.col-gallery {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
-
-.col-gallery img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .col-gallery {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-gallery {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-/* ======================= gallery END =======================*/
 
 /* ======================= MODAL =======================*/
 
@@ -230,3 +195,68 @@ h1 {
 }
 
 /* ======================= MODAL =======================*/
+
+/* ======================grid gallery ================== */
+#featured{
+  background-color:#202020;
+}
+/* #161616 */
+.gallery-container{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  /* background-color:#161616; */
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 100% Image Width on Smaller Screens */
+/* @media only screen and (min-width: 950px) {
+  .gallery-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} */
+
+
+.gallery-item{
+  background-color:#161616;
+}
+.gallery-item h3{
+  color: white;
+}
+.gallery-item-container{
+  padding: 0px 20px;
+  
+}
+
+
+/* ======================grid gallery ================== */
+
+#index-section-title{
+ border:none;
+}
+#featured-header{
+  color:white;
+}
+
+
+/* ======================services grid ================== */
+.services-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ======================services grid ================== */

@@ -2,128 +2,33 @@
 layout: layouts/base.html
 title: Home - Art By Skylee
 page_title: Featured
-featuredWorks:
-  - image: /site/img/IMG_8729.jpeg
-    title: Title 1
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque a sapien scelerisque, accumsan arcu eu, congue nisl. Duis
-      iaculis sapien urna, sit amet ultricies tellus pulvinar sed. Mauris quis
-      arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
-      Maecenas quis pulvinar ipsum.
-  - image: /site/img/IMG_8733.jpeg
-    title: Eat Me
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque a sapien scelerisque, accumsan arcu eu, congue nisl. Duis
-      iaculis sapien urna, sit amet ultricies tellus pulvinar sed. Mauris quis
-      arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
-      Maecenas quis pulvinar ipsum.
-  - image: /site/img/IMG_8742.jpeg
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque a sapien scelerisque, accumsan arcu eu, congue nisl. Duis
-      iaculis sapien urna, sit amet ultricies tellus pulvinar sed. Mauris quis
-      arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
-      Maecenas quis pulvinar ipsum.
-    title: "3"
-  - image: /site/img/IMG_8756.jpeg
-    title: "5"
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque a sapien scelerisque, accumsan arcu eu, congue nisl. Duis
-      iaculis sapien urna, sit amet ultricies tellus pulvinar sed. Mauris quis
-      arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
-      Maecenas quis pulvinar ipsum.
-  - image: /site/img/IMG_8766.jpeg
-    title: "8"
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque a sapien scelerisque, accumsan arcu eu, congue nisl. Duis
-      iaculis sapien urna, sit amet ultricies tellus pulvinar sed. Mauris quis
-      arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
-      Maecenas quis pulvinar ipsum.
-  - image: /site/img/IMG_8760.jpeg
-    title: "6"
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque a sapien scelerisque, accumsan arcu eu, congue nisl. Duis
-      iaculis sapien urna, sit amet ultricies tellus pulvinar sed. Mauris quis
-      arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
-      Maecenas quis pulvinar ipsum.
-  - image: /site/img/IMG_8764.jpeg
-    title: "7"
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque a sapien scelerisque, accumsan arcu eu, congue nisl. Duis
-      iaculis sapien urna, sit amet ultricies tellus pulvinar sed. Mauris quis
-      arcu est. Sed efficitur ipsum mi, id euismod velit pellentesque eu.
-      Maecenas quis pulvinar ipsum.
-services:
-  - title: "Service A"
-    description: "I will draw a small portrait (yes I do pet portraits as well!)
-      or a design of your choice rendered in pencil, fully shaded.
-      OR any design of your choice. Dimensions range from 5x7 to
-      8x10. Background elements = extra charge."
-  - title: "Service B"
-    description: "I will create a small colored pencil portrait (yes I do pet
-    portraits as well)! OR any design of your choice. Dimensions
-    range from 5x7 to 8x10. Background elements = extra charge."
-  - title: "Service C"
-    description: "I will create a small watercolor portrait (yes I do pet
-    portraits as well!) OR any design of your choice. Dimensions
-    range from 5x7 to 8x10. Background elements = extra charge."
-  - title: "Service D"
-    description: "I will do small to large scale paintings periodically. Message
-    me or email @SkyleeLPerkins@gmail.com to inquire about price,
-    duration, and subject matter." 
 ---
 
 <!-- ============ Featured - START ============ -->
 
 <div id="featured" class="section">
-  <div class="section-title">
-    <h2>{{page_title}}</h2>
+  <div id="index-section-title" class="section-title">
+    <h2 id="featured-header">{{page_title}}</h2>
   </div>
 
   <div class="content container">
     <!-- GALLERY START -->
-    <!-- https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp -->
-    <div class="row-gallery">
-      {% assign numColumns = 4 %}
-      {% assign len = featuredWorks.size | minus: 1%}
-      {% for i in (0..3) %}
-        <div class="col-gallery">
-          {% for j in (0..len) %}
-            {% assign modFour = j | modulo: 4 %}
-            {% if modFour == "0" and i == 0 %}
-              <div class="gallery-img-container">
-                <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
-                <h3 class="gallery-img-title">{{featuredWorks[j].title}}</h3>
-                <p class="gallery-img-desc">{{featuredWorks[j].description}}
-                </p>
-              </div>
-            {% endif %}
-            {% if modFour == "1" and i == 1 %}
-              <div class="gallery-img-container">
-                <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
-                <h3 class="gallery-img-title">{{featuredWorks[j].title}}</h3>
-                <p class="gallery-img-desc">{{featuredWorks[j].description}}
-                </p>
-              </div>
-            {% endif %}
-            {% if modFour == "2" and i == 2 %}
-              <div class="gallery-img-container">
-                <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
-                <h3 class="gallery-img-title">{{featuredWorks[j].title}}</h3>
-                <p class="gallery-img-desc">{{featuredWorks[j].description}}
-                </p>
-              </div>
-            {% endif %}
-            {% if modFour == "3" and i == 3 %}
-              <div class="gallery-img-container">
-                <img class="gallery-img" src="{{featuredWorks[j].image| remove: "/site" }}" />
-                <h3 class="gallery-img-title">{{featuredWorks[j].title}}</h3>
-                <p class="gallery-img-desc">{{featuredWorks[j].description}}
-                </p>
-              </div>
-            {% endif %}
-          {% endfor %}
+    <div class="gallery-container">
+      
+      {% for work in gallery.works %}
+        <div class="gallery-item">
+          <img class="gallery-img" src="{{work.image | remove: "/site"}}" />
+          <div class="gallery-item-container">
+            <h3 class="gallery-img-title">{{work.title}}</h3>
+            <p class="gallery-img-desc">{{work.description}}
+            </p>
+          </div>
         </div>
+        <!-- {{ work }} -->
       {% endfor %}
+  
+       
+
     </div>
 
     <!-- GALLERY END -->
@@ -141,33 +46,14 @@ services:
   </div>
 
   <div class="content container">
-
-    {% assign servicesColumns = 3.0 %}
-    {% assign len = services.size | minus: 1%}
-    {% assign serviceSizeFloat = services.size | times: 1.0 %}
-    {% assign numRows = serviceSizeFloat | divided_by: servicesColumns | ceil %}
-    {% assign index = 0 %}
-
-    {% for i in (1..numRows) %}
-        <div class="row">
-          {% for j in (index..len) %}
-            {% assign modThree = j | plus: 1| modulo: 3 %}
-            <div class="col-md-4">
-              <h3>{{services[j].title}}</h3>
-              <p>
-                {{services[j].description}}
-              </p>
-            </div>
-
-            {% if modThree == "0" %}
-                {% assign index = index | plus: j |plus: 1 %}
-                {{index}}
-                {% break %}
-            {% endif %}
-
-          {% endfor %}
-        </div>
-      {% endfor %}
+    <div class="services-grid">
+      {% for service in services.services %}
+      <div class="service-item">
+        <h3 class="service-header">{{service.title}}</h3>
+        <p class="service-text">{{service.description}}</p>
+      </div>
+      {%endfor%}
+    </div>
   </div>
 </div>
 

@@ -5,72 +5,35 @@ backend:
 display_url: https://artbyskylee.com
 
 collections:
-  - name : "posts" # routes in cms
-    label: "Blog Posts" # label in UI 
-    folder: "/src/site/posts" # place this lives in in 11ty or SSG
-    create: true
-    slug:  "{{year}}-{{month}}-{{day}}-{{slug}}" # final output url on client
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.html"} #name is variable in template
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - label: "Pages"
-    name: "pages"
+  - name: "settings"
+    label: "Settings"
+    extension: "json"
+    editor:
+      preview: false
+
     files:
-      - label: "About Me"
-        name: "aboutMe"
-        file: "src/site/about-me.html"
+      - file: "src/site/_data/gallery.json"
+        label: "Gallery"
+        name: "gallery"
         fields:
-          - {label: Title, name: page_title, widget: string}
-          - {label: Header, name: header, widget: string}
-          - {label: Reach Out To Me Message, name: message, widget: string}
-          - label: "Photo"
-            name: "photo"
-            widget: "image"
-          - label: "Bio"
-            name: "bio"
-            widget: "text"
-      - label: "Contact"
-        name: "contact"
-        file: "src/site/contact-me.html"
+        - label: Works
+          name: works
+          widget: list
+          fields:
+            - {label: Image, name: image, widget: image}
+            - {label: Title, name: title, widget: string, required: false}
+            - {label: Description, name: description, widget: text, required: false}
+      - file: "src/site/_data/services.json"
+        label: "Services"
+        name: "services"
         fields:
-          - {label: Title, name: page_title, widget: string}
-          - {label: Header, name: header, widget: string}
-          - {label: Contact Message, name: contactMessage, widget: text}
-          - label: "Subjects"
-            name: "subjects"
-            widget: "list"
-            summary: '{{fields.subject}}'
-            label_singular: "subject"
-            fields: 
-              - {label: Subject, name: subject, widget: string}
-      - label: "Homepage"
-        name: "homepage"
-        file: "src/site/index.html"
-        fields:
-          - {label: Layout, name: "layout", widget: "hidden", default: "layouts/base.html"}
-          - {label: Title, name: page_title, widget: string}
-          - label: "Featured Works"
-            name: "featuredWorks"
-            widget: "list"
-            summary: '{{fields.title}}'
-            label_singular: "Work"
-            fields: 
-              - {label: Image, name: image, widget: image}
-              - {label: Title, name: title, widget: string, required: false}
-              - {label: Description, name: description, widget: text, required: false}
-          - label: "Services"
-            name: "services"
-            widget: "list"
-            summary: '{{fields.title}}'
-            label_singular: "service"
-            fields: 
+        - label: Service
+          name: services
+          widget: list
+          fields: 
               - {label: Title, name: title, widget: string}
               - {label: Description, name: description, widget: text}
 
-            
 
 # These lines should *not* be indented
 media_folder: "src/site/img" # Media files will be stored in the repo under static/images/uploads
