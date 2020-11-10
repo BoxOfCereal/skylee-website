@@ -468,6 +468,7 @@
           emailField = $that.find('input[name="email"]').val(),
           postData = $that.serialize();
 
+          console.log($that)
         $msgForm.removeClass("fail success");
         $msgText.text("");
 

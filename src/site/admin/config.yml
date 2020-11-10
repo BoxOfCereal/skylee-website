@@ -33,6 +33,13 @@ collections:
           fields: 
               - {label: Title, name: title, widget: string}
               - {label: Description, name: description, widget: text}
+      file: "src/site/_data/about.json"
+        label: "About"
+        name: "about"
+        fields:
+          - {label: AboutMe, name: aboutMe, widget: markdown}
+          - {label: Photo, name: photo, widget: image}
+          - {label: PhotoAltText, name: alt, widget: string}
 
 
 # These lines should *not* be indented
