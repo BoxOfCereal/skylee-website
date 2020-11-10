@@ -2,15 +2,15 @@
   "services": [
     {
       "title": "Service 1",
-      "description": "Small portraits (yes I do pet portraits as well!) rendered in pencil, fully shaded. Dimensions range from 5\"x7\" to 8\"x10\". Background elements = extra charge. "
+      "description": "Small portraits (includes pets) rendered in pencil, fully shaded. Dimensions range from 5\"x7\" to 8\"x10\". Background elements = extra charge. "
     },
     {
       "title": "Service 2",
-      "description": "Small colored pencil portraits (yes I do pet portraits as well)! Dimensions range from 5\"x7\" to 8\"x10\". Background elements = extra charge. "
+      "description": "Small colored pencil portraits (includes pets) Dimensions range from 5\"x7\" to 8\"x10\". Background elements = extra charge. "
     },
     {
       "title": "Service 3",
-      "description": "Small watercolor/gouache portraits (yes I do pet portraits as well!) Dimensions range from 5\"x7\" to 8\"x10\". Background elements = extra charge. "
+      "description": "Small watercolor/gouache portraits (includes pets) Dimensions range from 5\"x7\" to 8\"x10\". Background elements = extra charge. "
     },
     {
       "title": "Service 4",
@@ -23,6 +23,10 @@
     {
       "title": "Service 6 ",
       "description": "Full color digital (Tattoo designs) Discussion of size, intricacy, and placement is required. "
+    },
+    {
+      "title": "Service 7 ",
+      "description": "Small digital portraits (includes pets) Dimensions range from 5\"x7\" to 8\"x10\". Background elements = extra charge. "
     }
   ]
 }
