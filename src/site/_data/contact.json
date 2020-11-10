@@ -1,0 +1,15 @@
+{
+  "header": "Let's Talk!",
+  "contactMessage": "Contact me!",
+  "subjects": [
+    {
+      "subject": "Commission"
+    },
+    {
+      "subject": "Collaboration"
+    },
+    {
+      "subject": "Other"
+    }
+  ]
+}
