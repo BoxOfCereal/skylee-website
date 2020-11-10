@@ -41,6 +41,17 @@ collections:
           - {label: Photo, name: photo, widget: image}
           - {label: PhotoAltText, name: alt, widget: string}
           - {label: Header, name: header, widget: string}
+      - file: "src/site/_data/contact.json"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {label: Header, name: header, widget: string}
+          - {label: ContactMessage, name: contactMessage, widget: text}
+          - widget: list
+            name: subjects
+            label: Subjects
+            fields: 
+              - {label: Subject, name: subject, widget: string}
 
 
 # These lines should *not* be indented
