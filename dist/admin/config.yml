@@ -33,7 +33,7 @@ collections:
           fields: 
               - {label: Title, name: title, widget: string}
               - {label: Description, name: description, widget: text}
-      file: "src/site/_data/about.json"
+      - file: "src/site/_data/about.json"
         label: "About"
         name: "about"
         fields:
