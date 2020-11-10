@@ -36,6 +36,12 @@
       "description": ""
     },
     {
+      "image": "/site/img/grimoire.jpg"
+    },
+    {
+      "image": "/site/img/teabag.jpg"
+    },
+    {
       "image": "/site/img/spider.jpg"
     },
     {
@@ -61,6 +67,15 @@
     },
     {
       "image": "/site/img/flower.jpg"
+    },
+    {
+      "image": "/site/img/bee-box.jpg"
+    },
+    {
+      "image": "/site/img/cicada-box.jpg"
+    },
+    {
+      "image": "/site/img/beetle-box.jpg"
     }
   ]
 }
