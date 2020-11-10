@@ -2,23 +2,14 @@
 layout: layouts/base.html
 title: Contact - Art By Skylee
 page_title: Contact | Art By Skylee
-header: Leave me a message!!
-contactMessage: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-  Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-  ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-  "
-subjects:
-  - subject: Commission
-  - subject: Collaboration
-  - subject: Other
 ---
 
-<div class="section">
+<div id="contact-section" class="section">
   <div class="content container">
-    <h2 class="focus-title">{{header}}</h2>
+    <h2 class="focus-title">{{contact.header}}</h2>
 
     <p>
-      {{contactMessage}}
+      {{contact.contactMessage}}
     </p>
 
     <!-- ============ Contact Form - START ============ -->
@@ -39,7 +30,7 @@ subjects:
           <select name="subject" id="subject">
           
         <div class="row">
-            {% for option in subjects %}
+            {% for option in contact.subjects %}
               <option value="{{option.subject}}">{{option.subject}}</option>
             {% endfor %}
           </select>

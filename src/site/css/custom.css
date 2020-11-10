@@ -267,3 +267,32 @@ h1 {
   color:white;
 }
 /* ======================About ================== */
+
+/* ======================contact ================== */
+#contact-section{
+  background-color:#202020;
+  color:white;
+}
+
+#contact-section h2{
+  color:white;
+}
+#contact-section form{
+  color:white;
+}
+
+#contact-section label strong{
+  color:white;
+}
+
+#contact-section input[type="text"], textarea {
+  background-color : #161616; 
+  border:none;
+  color: #cccccc;
+}
+
+#contact-section input[type="text"]:focus {
+  border : #cccccc; 
+}
+
+/* ======================contact ================== */
