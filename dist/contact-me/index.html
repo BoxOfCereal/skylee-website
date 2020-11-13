@@ -120,7 +120,7 @@
 
     <!-- ============ Contact Form - START ============ -->
 
-    <form
+    <form id="contact-form"
     >
       <div class="col-md-6">
         <label
@@ -157,7 +157,6 @@
           type="submit"
           name="submit"
           value="Send Message"
-          id="submitBtn"
         />
       </div>
       <input type="hidden" name="form_type" value="contact" />
@@ -171,25 +170,46 @@
 </script>
 
 <script>
-  const sendButton = document.getElementById("submitBtn");
+  const form = document.getElementById("contact-form");
   const email = document.getElementById("email").value;
   const name = document.getElementById("name").value;
   const subject = document.getElementById("subject").value;
   const body = document.getElementById("body").value;
+  console.log(form)
 
+  const emailValidator = function (email) {
+    var emailReg = new RegExp(
+      /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+    );
+    var valid = emailReg.test(email);
 
-  sendButton.onclick(e=>{
+    return valid;
+  };
+
+  form.onsubmit = (e=>{
     e.preventDefault();
+    const requiredFields = form.getElementsByClassName("required");
+    let missing;
+    const nodeItems = Array.from(requiredFields);
+    nodeItems.forEach(item=>{
+      if (item.value === "")
+        missing = true;
+    })
+
+    const validEmail = emailValidator(email);
+
+    if (!missing && validEmail){
+      Email.send({
+        SecureToken : "eec23de3-3c24-4852-928f-a614875c0188",
+        To : email,
+        From : "nolestock@gmail.com",
+        Subject : `${name} ${subject} ${body.slice(0,10)}`,
+        Body : body
+      }).then(
+        message => alert(message)
+      );
+    }
   })
-  Email.send({
-    SecureToken : "eec23de3-3c24-4852-928f-a614875c0188",
-    To : email,
-    From : "nolestock@gmail.com",
-    Subject : `${name} ${subject} ${body.slice(0,10)}`,
-    Body : body
-}).then(
-  message => alert(message)
-);
 </script>
 
 
