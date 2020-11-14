@@ -1,6 +1,9 @@
 {
   "works": [
     {
+      "image": "/site/img/spider.jpg"
+    },
+    {
       "image": "/site/img/IMG_8729.jpeg",
       "title": "",
       "description": ""
@@ -40,9 +43,6 @@
     },
     {
       "image": "/site/img/teabag.jpg"
-    },
-    {
-      "image": "/site/img/spider.jpg"
     },
     {
       "image": "/site/img/rose.jpg"
