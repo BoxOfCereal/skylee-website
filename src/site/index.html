@@ -14,7 +14,7 @@ page_title: Featured
   <div class="content container">
     <!-- GALLERY START -->
     <div class="gallery-container">
-      
+
       {% for work in gallery.works %}
         <div class="gallery-item">
           <img class="gallery-img" src="{{work.image | remove: "/site"}}" />

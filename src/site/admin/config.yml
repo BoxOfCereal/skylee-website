@@ -23,7 +23,6 @@ collections:
             - {label: Image, name: image, widget: image}
             - {label: Title, name: title, widget: string, required: false}
             - {label: Description, name: description, widget: text, required: false}
-            - {label: GalleryPosition, name: priority, widget: number, required: true, default: 100}
       - file: "src/site/_data/services.json"
         label: "Services"
         name: "services"
