@@ -191,9 +191,9 @@
     Email.send({
       SecureToken : "3f3c8267-1b04-400a-b2f6-2df69b31972a",
       To : 'nolestock@gmail.com',
-      From : "nolestock@gmail.com",
-      Subject : "This is the subject",
-      Body : "And this is the body"
+      From : `${email}`,
+      Subject : `${subject} ${body.slice(0,15)}...`,
+      Body : `${body}`
     }).then(
       message => alert(message)
     );
