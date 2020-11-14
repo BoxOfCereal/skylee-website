@@ -120,44 +120,35 @@
 
     <!-- ============ Contact Form - START ============ -->
 
-    <form id="contact-form"
-    >
+    <!-- Yeah the form is wrong but it's not my code and I don't feel like changing it. -->
+    <form id="contact-form">
       <div class="col-md-6">
-        <label
-          ><strong>Full Name *</strong>
+        <label><strong>Name *</strong>
           <input class="required" type="text" name="name" id="name" />
         </label>
-        <label
-          ><strong>Email *</strong>
+        <label><strong>Email *</strong>
           <input class="required" type="text" name="email" id="email" />
         </label>
-        <label
-          ><strong>Subject</strong>
+        <label><strong>Subject</strong>
           <select name="subject" id="subject">
-          
-        <div class="row">
-            
+
+            <div class="row">
+              
               <option value="Commission">Commission</option>
-            
+              
               <option value="Collaboration">Collaboration</option>
-            
+              
               <option value="Other">Other</option>
-            
+              
           </select>
         </label>
       </div>
       <div class="col-md-6">
-        <label
-          ><strong>Message *</strong>
+        <label><strong>Message *</strong>
           <textarea class="required" name="message" id="body"></textarea>
         </label>
         <p>( <strong>*</strong> ) = Mandatory field</p>
-        <input
-          class="submit btn md"
-          type="submit"
-          name="submit"
-          value="Send Message"
-        />
+        <input class="submit btn md" type="submit" name="submit" value="Send Message" />
       </div>
       <input type="hidden" name="form_type" value="contact" />
     </form>
@@ -175,28 +166,60 @@
   const name = document.getElementById("name").value;
   const subject = document.getElementById("subject").value;
   const body = document.getElementById("body").value;
-  console.log(form)
+  const inputs = Array.from(form.getElementsByClassName("required"))
 
-  // const emailValidator = function (email) {
-  //   var emailReg = new RegExp(
-  //     /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
-  //   );
-  //   var valid = emailReg.test(email);
 
-  //   return valid;
-  // };
-
-  form.onsubmit = (e=>{
-    e.preventDefault();
-    Email.send({
-      SecureToken : "3f3c8267-1b04-400a-b2f6-2df69b31972a",
-      To : 'nolestock@gmail.com',
-      From : `${email}`,
-      Subject : `${subject} ${body.slice(0,15)}...`,
-      Body : `${body}`
-    }).then(
-      message => alert(message)
+  const emailValidator = function (email) {
+    var emailReg = new RegExp(
+      /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
     );
+    var valid = emailReg.test(email);
+
+    return valid;
+  };
+
+  const inputValidator = (inputArray) => {
+
+    return inputArray.every(input => {
+      if (input.value === "" && input.classList.contains("invalid-input")) {
+        return input.value === ""
+      } else if (input.value === "") {
+        input.classList.toggle("invalid-input")
+        return input.value === ""
+      }
+      return input.value === ""
+    })
+  }
+
+  //clear redbox
+  inputs.forEach(input => {
+    input.onfocus = function (e) {
+      if (e.target.classList.contains("invalid-input")) {
+        e.target.classList.toggle("invalid-input")
+      }
+    }
+  })
+
+  form.onsubmit = (e => {
+    e.preventDefault();
+    const emailIsValid = emailValidator(email);
+    const inputsAreValid = inputValidator(inputs)
+    //validate
+    console.log(emailIsValid, inputsAreValid, email, name, body)
+
+    if (emailIsValid && inputsAreValid) {
+      Email.send({
+        SecureToken: "3f3c8267-1b04-400a-b2f6-2df69b31972a",
+        To: 'nolestock@gmail.com',
+        From: `${email}`,
+        Subject: `${name} ${subject}`,
+        Body: `${body}`
+      }).then(
+        //email sent
+        message => alert(message)
+      );
+    }
+
   })
 </script>
 
