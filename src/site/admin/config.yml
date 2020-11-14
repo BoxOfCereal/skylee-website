@@ -19,6 +19,7 @@ collections:
         - label: Works
           name: works
           widget: list
+          summary: '{{fields.image}}'
           fields:
             - {label: Image, name: image, widget: image}
             - {label: Title, name: title, widget: string, required: false}
