@@ -36,6 +36,12 @@
       "description": ""
     },
     {
+      "image": "/site/img/grimoire.jpg"
+    },
+    {
+      "image": "/site/img/teabag.jpg"
+    },
+    {
       "image": "/site/img/bride-of-frankenstein.jpg"
     },
     {
@@ -55,12 +61,6 @@
     },
     {
       "image": "/site/img/moth.jpg"
-    },
-    {
-      "image": "/site/img/grimoire.jpg"
-    },
-    {
-      "image": "/site/img/teabag.jpg"
     },
     {
       "image": "/site/img/bee-box.jpg"
