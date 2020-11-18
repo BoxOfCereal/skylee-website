@@ -1,9 +1,6 @@
 {
   "works": [
     {
-      "image": "/site/img/spider.jpg"
-    },
-    {
       "image": "/site/img/IMG_8729.jpeg",
       "title": "",
       "description": ""
@@ -45,13 +42,16 @@
       "image": "/site/img/teabag.jpg"
     },
     {
-      "image": "/site/img/rose.jpg"
+      "image": "/site/img/bride-of-frankenstein.jpg"
+    },
+    {
+      "image": "/site/img/spider.jpg"
     },
     {
       "image": "/site/img/gem.jpg"
     },
     {
-      "image": "/site/img/bride-of-frankenstein.jpg"
+      "image": "/site/img/rose.jpg"
     },
     {
       "image": "/site/img/sickle.jpg"
@@ -61,12 +61,6 @@
     },
     {
       "image": "/site/img/moth.jpg"
-    },
-    {
-      "image": "/site/img/crystals.jpg"
-    },
-    {
-      "image": "/site/img/flower.jpg"
     },
     {
       "image": "/site/img/bee-box.jpg"
