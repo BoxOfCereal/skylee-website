@@ -300,3 +300,20 @@ h1 {
 }
 
 /* ======================contact ================== */
+
+.email-confirmation{
+  display:flex;
+  margin: 0 auto;
+  width: 80%;
+  height: 50px;
+  border: soild #cccccc 1px;
+  z-index: 100;
+  bottom: 10px;
+}
+
+.hidden{
+  display: none;
+}
+.visible{
+  display: block;
+}
