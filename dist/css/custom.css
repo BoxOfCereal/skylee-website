@@ -301,19 +301,49 @@ h1 {
 
 /* ======================contact ================== */
 
-.email-confirmation{
-  display:flex;
-  margin: 0 auto;
-  width: 80%;
-  height: 50px;
-  border: soild #cccccc 1px;
-  z-index: 100;
-  bottom: 10px;
+ /* The Modal (background) */
+ .confirmation-modal {
+  display: flex; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  bottom:0;
+  width: 100%; /* Full width */
+  height: 80px; /* Full height */
+  overflow: auto; 
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.99); /* Black w/ opacity */
 }
 
-.hidden{
-  display: none;
+
+/* Modal Content/Box */
+.confirmation-modal-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fefefe;
+  margin: 0% auto; /* 15% from the top and centered */
+  padding: 1px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
 }
-.visible{
-  display: block;
+
+/* The Close Button */
+#modal-close-button {
+  color: #aaa;
+  float: right;
+  font-size: 45px;
+  font-weight: bold;
 }
+.confirmation-modal-content p {
+  margin:0;
+  font-size: 28px;
+}
+
+#modal-close-button:hover,
+#modal-close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 

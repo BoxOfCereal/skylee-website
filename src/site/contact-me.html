@@ -49,10 +49,16 @@ page_title: Contact | Art By Skylee
   </div>
 </div>
 
-<!-- <div class="email-confirmation visible">
-  <p>Email Sent!</p>
-  <span class="close-button">X</span>
-</div> -->
+<!-- The Modal -->
+<div id="confirmation-modal" class="confirmation-modal">
+
+  <!-- Modal content -->
+  <div class="confirmation-modal-content">
+    <span id="modal-close-button">&times;</span>
+    <p>Email Sent!</p>
+  </div>
+
+</div>
 
 <script src="https://smtpjs.com/v3/smtp.js">
 </script>
@@ -66,16 +72,44 @@ page_title: Contact | Art By Skylee
     name: "",
     email: "",
     message: "",
+    subject: document.getElementById("subject").value,
     nameInput: null,
     emailInput: null,
     messageInput: null,
+    contactForm: null,
+    subjectInput:null,
+    //if this were react I'd pull this out.
+    confirmationModal: null,
+    modalCloseButton: null,
   }
 
-  // const sentConfirmation = () =>{
-  //   const emailConfirmation = document.getElementsByClassName("email-confirmation");
-  //   emailConfirmation.classList.remove("hidden");
-  //   emailConfirmation.classList.remove("visible")
-  // }
+  const resetForm = () => {
+    state = {
+      ...state, name: "",
+      email: "",
+      message: "",
+      nameValid: false,
+      emailValid: false,
+      messageValid: false,
+    }
+
+    const inputs = {nameInput:state.nameInput,
+      emailInput:state.emailInput,
+      messageInput:state.messageInput}
+
+    const inputArray =(Object.values(inputs))
+
+    inputArray.forEach(input => {
+      input.value = ""
+      input.style.border = "none"})
+  }
+
+  const sentConfirmation = () => {
+    //show modal
+    state.confirmationModal.style.display = "block";
+    //reset form
+    resetForm();
+  }
 
 
   function insertAfter(newNode, referenceNode) {
@@ -106,26 +140,27 @@ page_title: Contact | Art By Skylee
 
   const submitForm = e => {
     e.preventDefault()
+    state.subject = document.getElementById("contact-form").querySelector('input[name="subject"').value
+    console.log(state.subject)
 
+    //3f3c8267-1b04-400a-b2f6-2df69b31972a
     if (state.messageValid && state.nameValid && state.emailValid) {
       Email.send({
-        SecureToken: "3f3c8267-1b04-400a-b2f6-2df69b31972a",
-        To: 'perkins.skylee@gmail.com',
+        SecureToken: "",
+        To: 'nolestock@gmail.com',
         From: `${state.email}`,
-        Subject: `${state.name} ${subject}`,
+        Subject: `${state.name} ${state.subject}`,
         Body: `${state.message}`
       }).then(
         //email sent
         message => {
-          const inputArr = [nameInput,
-            emailInput,
-            messageInput] = state;
-          inputArr.forEach(input=>{
-            input.value = "";
-            input.style.border = "none";
-            })
+          sentConfirmation();
+          //display sent modal
         }
-      );
+      ).catch(error=>{
+        console.log(error)
+        sentConfirmation()
+      });
     }
   }
 
@@ -148,6 +183,10 @@ page_title: Contact | Art By Skylee
     console.log(state)
   }
 
+  const buttonHandler = () => modal.style.display = "none";
+
+  const selectHandler = e => console.log(e)
+  
 
   state.nameInput = document.getElementById("name")
   const nameHandler = (e) => inputHandler(e, [requiresInput, greaterThan])
@@ -163,8 +202,19 @@ page_title: Contact | Art By Skylee
   state.messageInput = document.getElementById("message")
   state.messageInput.oninput = messageHandler
 
-  const contactForm = document.getElementById("contact-form")
-  contactForm.onsubmit = submitForm
+  const subjectInput = document.getElementById("subject");
+  
+  //for whatever reason this wont work
+  subjectInput.addEventListener('change', (event) => {
+    console.log(event)
+  });
 
+  state.contactForm = document.getElementById("contact-form")
+  state.contactForm.onsubmit = submitForm
+
+  state.confirmationModal = document.getElementById("confirmation-modal");
+
+  state.modalCloseButton = document.getElementById("modal-close-button");
+  state.modalCloseButton.onclick = buttonHandler;
 
 </script>
