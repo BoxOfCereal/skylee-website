@@ -60,7 +60,11 @@ page_title: Contact | Art By Skylee
 
 </div>
 
-<script src="https://smtpjs.com/v3/smtp.js">
+<script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+  emailjs.init("user_WTMJGbqYOatlL0YLoPe88");
+  })();
 </script>
 
 <script>
@@ -143,24 +147,31 @@ page_title: Contact | Art By Skylee
     state.subject = document.getElementById("contact-form").querySelector('input[name="subject"').value
     console.log(state.subject)
 
-    //3f3c8267-1b04-400a-b2f6-2df69b31972a
     if (state.messageValid && state.nameValid && state.emailValid) {
-      Email.send({
-        SecureToken: "",
-        To: 'nolestock@gmail.com',
-        From: `${state.email}`,
-        Subject: `${state.name} ${state.subject}`,
-        Body: `${state.message}`
-      }).then(
-        //email sent
-        message => {
-          sentConfirmation();
-          //display sent modal
+
+      // code fragment
+    const data = {
+        service_id: 'service_t3qquta',
+        template_id: 'template_8htde67',
+        user_id: 'user_WTMJGbqYOatlL0YLoPe88',
+        template_params: {
+            "subject":`${state.name} ${state.subject}`,
+            "to_name": "Skylee",
+            "from_name":`${state.name}`,
+            "message":`${state.message}`,
+            "reply_to":`${state.email}`
         }
-      ).catch(error=>{
-        console.log(error)
-        sentConfirmation()
-      });
+    };
+
+    fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST", 
+      body: JSON.stringify(data)
+    }).then(res => {
+      console.log("Request complete! response:", res);
+      sentConfirmation();
+    }).catch(err=>{
+      console.log(err)
+    });
     }
   }
 
