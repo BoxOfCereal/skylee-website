@@ -1,14 +1,12 @@
 {
   "works": [
     {
+      "image": "/site/img/moth.jpg"
+    },
+    {
       "image": "/site/img/IMG_8729.jpeg",
       "title": "",
       "description": ""
-    },
-    {
-      "image": "/site/img/IMG_8742.jpeg",
-      "description": "",
-      "title": ""
     },
     {
       "image": "/site/img/IMG_8733.jpeg",
@@ -48,9 +46,6 @@
       "image": "/site/img/spider.jpg"
     },
     {
-      "image": "/site/img/gem.jpg"
-    },
-    {
       "image": "/site/img/rose.jpg"
     },
     {
@@ -60,7 +55,7 @@
       "image": "/site/img/candle.jpg"
     },
     {
-      "image": "/site/img/moth.jpg"
+      "image": "/site/img/moth-2.jpg"
     },
     {
       "image": "/site/img/bee-box.jpg"
