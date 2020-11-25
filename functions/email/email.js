@@ -8,7 +8,7 @@ const handler = async (event) => {
     const body = JSON.parse(event.body);
 
     const msg = {
-      to: "nolestock@gmail.com", // Change to your recipient
+      to: "skyleelperkins@gmail.com", // Change to your recipient
       from: "nolestock@gmail.com", // Change to your verified sender
       subject: `${body.name} ${body.subject}`,
       text: "Message:",

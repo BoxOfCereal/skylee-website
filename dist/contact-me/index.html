@@ -262,7 +262,6 @@
   const submitForm = e => {
     e.preventDefault()
     state.subject = document.getElementById("contact-form").querySelector('input[name="subject"').value
-    console.log(state.subject)
 
     if (state.messageValid && state.nameValid && state.emailValid) {
 
@@ -280,14 +279,13 @@
         body: JSON.stringify(data),
         mode: 'cors'
       }).then(res => {
-        console.log("Request complete! response:", res);
         showModal("Email Sent!",true);
       }).catch(err=>{
         console.log(err)
       });
     }else{
       //show error dialog
-      showModal("Please Fill Out all Fields")
+      showModal("Please Fill Out All Fields")
     }
   }
 
@@ -300,14 +298,12 @@
     state[`${e.target.name}Valid`] = validators.every(validator => validator(e.target.value));
     if (state[`${e.target.name}Valid`] === false) {
       e.target.style.border = "2px solid red"
-      // console.log(e.target.nextSibling)
       if (!e.target.nextSibling || e.target.nextSibling.nodeType === 3)
         insertAfter(errorMessage(e.target.name), e.target)
     } else {
       e.target.style.border = "none"
       removeNextSibling(e.target)
     }
-    console.log(state)
   }
 
   const buttonHandler = () => modal.style.display = "none";
@@ -333,7 +329,6 @@
   
   //for whatever reason this wont work
   subjectInput.addEventListener('change', (event) => {
-    console.log(event)
   });
 
   state.contactForm = document.getElementById("contact-form")
