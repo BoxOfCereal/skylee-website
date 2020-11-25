@@ -212,19 +212,26 @@
       input.style.border = "none"})
   }
 
-  const sentConfirmation = () => {
-    //show modal
-    state.confirmationModal.querySelector(".modal-text").innerText = "Email Sent!"
-    state.confirmationModal.style.display = "none";
-    state.confirmationModal.style.display = "block";
-    //reset form
-    resetForm();
+
+  //https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Tips
+  function play(animationName,eClass) {
+    element = document.querySelector(eClass)
+    classesWithoutAnim = Array.from(element.classList).filter(x=>x!==animationName)
+    document.querySelector(eClass).className = classesWithoutAnim.join(" ");
+    window.requestAnimationFrame(function(time) {
+      window.requestAnimationFrame(function(time) {
+        element.classList.add(animationName)
+      });
+    });
   }
-  const showErrorModal = ()=>{
-    state.confirmationModal.querySelector(".modal-text").innerText = "Please Fill Out all Fields"
-    state.confirmationModal.style.display = "none";
-    state.confirmationModal.style.display = "block";
+
+  const showModal = (text,reset=false)=>{
+    state.confirmationModal.querySelector(".modal-text").innerText = text
+    play("animate-modal",".confirmation-modal")
+    //reset form on sucessful email
+    if (reset) resetForm();
   }
+
 
   function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -274,13 +281,13 @@
         mode: 'cors'
       }).then(res => {
         console.log("Request complete! response:", res);
-        sentConfirmation();
+        showModal("Email Sent!",true);
       }).catch(err=>{
         console.log(err)
       });
     }else{
       //show error dialog
-      showErrorModal()
+      showModal("Please Fill Out all Fields")
     }
   }
 
