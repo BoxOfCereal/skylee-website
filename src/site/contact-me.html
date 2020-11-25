@@ -55,17 +55,11 @@ page_title: Contact | Art By Skylee
   <!-- Modal content -->
   <div class="confirmation-modal-content">
     <span id="modal-close-button">&times;</span>
-    <p>Email Sent!</p>
+    <p class="modal-text">Email Sent!</p>
   </div>
 
 </div>
 
-<script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function() {
-  emailjs.init("user_WTMJGbqYOatlL0YLoPe88");
-  })();
-</script>
 
 <script>
   // Writing this *like* it was a react component is 10000 times easier
@@ -110,11 +104,17 @@ page_title: Contact | Art By Skylee
 
   const sentConfirmation = () => {
     //show modal
+    state.confirmationModal.querySelector(".modal-text").innerText = "Email Sent!"
+    state.confirmationModal.style.display = "none";
     state.confirmationModal.style.display = "block";
     //reset form
     resetForm();
   }
-
+  const showErrorModal = ()=>{
+    state.confirmationModal.querySelector(".modal-text").innerText = "Please Fill Out all Fields"
+    state.confirmationModal.style.display = "none";
+    state.confirmationModal.style.display = "block";
+  }
 
   function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -158,16 +158,19 @@ page_title: Contact | Art By Skylee
       "from_email":`${state.email}`
     };
 
-    fetch("https://www.artbyskylee.com/.netlify/functions/email", {
-      method: "POST", 
-      body: JSON.stringify(data),
-      mode: 'cors'
-    }).then(res => {
-      console.log("Request complete! response:", res);
-      sentConfirmation();
-    }).catch(err=>{
-      console.log(err)
-    });
+      fetch("https://www.artbyskylee.com/.netlify/functions/email", {
+        method: "POST", 
+        body: JSON.stringify(data),
+        mode: 'cors'
+      }).then(res => {
+        console.log("Request complete! response:", res);
+        sentConfirmation();
+      }).catch(err=>{
+        console.log(err)
+      });
+    }else{
+      //show error dialog
+      showErrorModal()
     }
   }
 
