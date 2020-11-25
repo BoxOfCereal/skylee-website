@@ -154,7 +154,7 @@ page_title: Contact | Art By Skylee
     state.subject = document.getElementById("contact-form").querySelector('input[name="subject"').value
 
     if (state.messageValid && state.nameValid && state.emailValid) {
-
+      showModal("Sending Email!");
       // code fragment
     const data = {
       "name":`${state.name}` ,
@@ -171,7 +171,7 @@ page_title: Contact | Art By Skylee
       }).then(res => {
         showModal("Email Sent!",true);
       }).catch(err=>{
-        console.log(err)
+        showModal("Something went wrong :(");
       });
     }else{
       //show error dialog
