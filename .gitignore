@@ -1,3 +1,10 @@
 keys
 .vscode
 node_modules
+/src/.env
+.env
+
+# Local Netlify folder
+.netlify
+
+.vscode

@@ -151,19 +151,14 @@ page_title: Contact | Art By Skylee
 
       // code fragment
     const data = {
-        service_id: '',
-        template_id: '',
-        user_id: '',
-        template_params: {
-            "subject":`${state.name} ${state.subject}`,
-            "to_name": "Skylee",
-            "from_name":`${state.name}`,
-            "message":`${state.message}`,
-            "reply_to":`${state.email}`
-        }
+      "name":`${state.name}` ,
+      "subject":`${state.subject}`,
+      "from_name":`${state.name}`,
+      "message":`${state.message}`,
+      "from_email":`${state.email}`
     };
 
-    fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    fetch("", {
       method: "POST", 
       body: JSON.stringify(data),
       headers: new Headers({'content-type': 'application/json'}),
