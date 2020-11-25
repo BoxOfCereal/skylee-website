@@ -268,10 +268,10 @@
       "from_email":`${state.email}`
     };
 
-    fetch("", {
+    fetch("https://www.artbyskylee.com/.netlify/functions/email", {
       method: "POST", 
       body: JSON.stringify(data),
-      headers: new Headers({'content-type': 'application/json'}),
+      mode: 'cors'
     }).then(res => {
       console.log("Request complete! response:", res);
       sentConfirmation();
