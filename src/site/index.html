@@ -17,7 +17,7 @@ page_title: Featured
 
       {% for work in gallery.works %}
         <div class="gallery-item">
-          <img class="gallery-img" src="{{work.image | remove: "/site"}}" />
+          <img loading="lazy" class="gallery-img" src="{{work.image | remove: "/site"}}" />
           <!-- <div class="gallery-item-container">
             <h3 class="gallery-img-title">{{work.title}}</h3>
             <p class="gallery-img-desc">{{work.description}}
