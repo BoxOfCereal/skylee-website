@@ -1,3 +1,5 @@
+const showdown  = require('showdown') //for markdown function
+
 module.exports = function (config) {
 
   config.addPassthroughCopy("src/site/img");
@@ -12,6 +14,15 @@ module.exports = function (config) {
     const firstParagraph = content.match(/<p>(.*?)<\/p>/)[0]
 
     return firstParagraph;
+  });
+
+  config.addFilter("markdownToHtml", function(value) {
+    //get content
+    const converter = new showdown.Converter()
+    const text      = value
+    const html      = converter.makeHtml(text);
+    
+    return html;
   });
 
 
