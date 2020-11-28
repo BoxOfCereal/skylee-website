@@ -260,6 +260,18 @@ h1 {
   background-color: #202020;
   color: white;
 }
+
+#about-section h2{
+  color:white;
+}
+
+#about-section ul.social-links a{
+  background-color: #161616 ;
+}
+  
+#about-section ul.social-links a:hover{
+  background-color: #bdc3c7 ;
+}
 /* ======================About ================== */
 
 /* ======================contact ================== */
