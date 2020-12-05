@@ -49,6 +49,14 @@ h1 {
   }
 }
 
+@media only screen and (max-height: 600px) {
+ #brand h1{
+   padding-top: 40px;
+ }
+}
+
+
+
 @media only screen and (max-width: 990px) {
   #insta-text {
     text-align: center;
