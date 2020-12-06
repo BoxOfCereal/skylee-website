@@ -56,7 +56,7 @@ collections:
       - file: "src/site/_data/products.json"
         label: "Products"
         name: "products"
-         fields:
+        fields:
         - label: Works
           name: works
           widget: list
