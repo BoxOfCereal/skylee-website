@@ -57,8 +57,8 @@ collections:
         label: "Products"
         name: "products"
         fields:
-        - label: Works
-          name: works
+        - label: Products
+          name: products
           widget: list
           summary: '{{fields.image}}'
           fields:
