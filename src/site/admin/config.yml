@@ -53,6 +53,20 @@ collections:
             label: Subjects
             fields: 
               - {label: Subject, name: subject, widget: string}
+      - file: "src/site/_data/products.json"
+        label: "Products"
+        name: "products"
+         fields:
+        - label: Works
+          name: works
+          widget: list
+          summary: '{{fields.image}}'
+          fields:
+            - {label: Image, name: image, widget: image}
+            - {label: Title, name: title, widget: string, required: false}
+            - {label: Description, name: description, widget: text, required: false}
+            - {label: Price, name: price, widget: number}
+            - {label: ButtonCode, name: buttonCode, widget: code,default_language: html,output_code_only: true}
 
 
 # These lines should *not* be indented
