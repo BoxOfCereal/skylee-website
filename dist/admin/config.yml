@@ -64,9 +64,14 @@ collections:
           fields:
             - {label: Image, name: image, widget: image}
             - {label: Title, name: title, widget: string, required: false}
+            - label: "Category"
+              name: "category"
+              widget: "select"
+              options: ["pencil", "coloredPencil", "commission","watercolor","painting","digital","polymer"]
+              multiple: true
             - {label: Description, name: description, widget: text, required: false}
-            - {label: Price, name: price, widget: number}
-            - {label: ButtonCode, name: buttonCode, widget: code,default_language: html,output_code_only: true}
+            - {label: Price, name: price, widget: number, required: true}
+            - {label: ButtonCode, name: buttonCode, widget: code, default_language: html,output_code_only: true}
 
 
 # These lines should *not* be indented

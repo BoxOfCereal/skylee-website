@@ -207,7 +207,8 @@ h1 {
   background-color: #202020;
 }
 /* #161616 */
-.gallery-container {
+.gallery-container,
+.shop-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 10px;
@@ -217,7 +218,8 @@ h1 {
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px) {
-  .gallery-container {
+  .gallery-container,
+  .shop-container  {
     grid-template-columns: 1fr;
   }
 }
@@ -229,10 +231,13 @@ h1 {
   }
 } */
 
-.gallery-item {
+.gallery-item,
+.shop-item {
   background-color: #202020;
 }
-.gallery-item h3 {
+.gallery-item h3,
+.shop-item h3,
+.shop-item p {
   color: white;
 }
 .gallery-item-container {

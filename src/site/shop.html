@@ -5,10 +5,21 @@ title: "Shop - Art By Skylee"
 
 <!-- ============ Works - START ============ -->
 <div class="section">
+  <h2>Shop</h2>
   <div class="content container">
+    <div class="shop-container">
     <!-- shop item -->
-    
-      
+    {% for product in products.products %}
+        <div class="shop-item" data-category="{{category}}">
+          <img loading="lazy" class="shop-img" src="{{product.image | remove: "/site"}}" />
+          <h3>{{product.title}}</h3>
+          <p>{{product.description}}</p>
+          <p>${{product.price}}</p>
+          {{product.buttonCode}}
+        </div>
+        <!-- {{ work }} -->
+      {% endfor %}
+    </div>
      <!-- shop item end -->
   </div>
 </div>
